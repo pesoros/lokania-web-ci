@@ -53,7 +53,7 @@
 							</div>
 							
 							<div class="large-4 columns" style="max-width:100%;">
-								<span class="">: <?php echo $_SESSION['checkin_date'];?>
+								<span class="">: <?php echo session('checkin_date');?>
 								</span>				
 							
 							</div>
@@ -65,7 +65,7 @@
 							</div>
 							
 							<div class="large-4 columns" style="max-width:100%;">
-								<span class="">: <?php echo $_SESSION['checkout_date'];?>
+								<span class="">: <?php echo session('checkout_date');?>
 								</span>				
 							
 							</div>
@@ -77,7 +77,7 @@
 							</div>
 							
 							<div class="large-4 columns" style="max-width:100%;">
-								<span class="">: <?php echo $_SESSION['adults'];?>
+								<span class="">: <?php echo session('adults');?>
 								</span>				
 							
 							</div>
@@ -89,7 +89,7 @@
 							</div>
 							
 							<div class="large-4 columns" style="max-width:100%;">
-								<span class="">: <?php echo $_SESSION['childrens'];?>
+								<span class="">: <?php echo session('childrens');?>
 								</span>				
 							
 							</div>
@@ -101,7 +101,7 @@
 							</div>
 							
 							<div class="large-4 columns" style="max-width:100%;">
-								<span class="">: <?php echo  $_SESSION['total_night'];?>
+								<span class="">: <?php echo  session('total_night');?>
 								</span>				
 							
 							</div>
@@ -133,7 +133,12 @@
 	<div class="large-8 columns blackblur fontcolor" style="padding:10px">
 	
 		<div class="large-12 columns" >
-			<?php echo $roomElement; ?>
+			<p><b>Choose Your Room</b></p>
+			<hr class="line">
+			<form action="<?= base_url('guestroom') ?>" method="post">
+				<?php echo $roomElement; ?>
+				<button type="submit" id="submit-form" class="hidden" style="display:none">Book</button>
+			</form>
 		</div>
 	
 

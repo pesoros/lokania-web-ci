@@ -13,7 +13,16 @@ class Room extends Model
         // OR $this->db = db_connect();
     }
 
-    public function getRoom($data = array())
+    public function getRoomAll()
+    {
+        $query = $this->db->query("
+            select room.* from room 
+        ");
+
+        return $query->getResult('array');
+    }
+
+    public function getRoomAvail($data = array())
     {
         $datestart =  $data['checkin'];
         $dateend =  $data['checkout'];
