@@ -13,4 +13,10 @@ class Roombook extends Model
     protected $insertID         = 0;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
+    protected $allowedFields = [
+        'booking_id',
+        'room_id',
+        'totalroombook',
+        'id'
+    ];
 }

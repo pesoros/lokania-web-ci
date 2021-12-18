@@ -6,6 +6,13 @@ use CodeIgniter\Model;
 
 class Room extends Model
 {
+    protected $table            = 'room';
+    protected $primaryKey       = 'room_id';
+    protected $useAutoIncrement = true;
+    protected $insertID         = 0;
+    protected $returnType       = 'array';
+    protected $useSoftDeletes   = false;
+
     public function __construct()
     {
         parent::__construct();
@@ -47,7 +54,7 @@ class Room extends Model
         return $query->getResult('array');
     }
 
-    public function getRoomDetail($data = array())
+    public function getRoomAvailDetail($data = array())
     {
         $id =  $data['id'];
 

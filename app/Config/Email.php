@@ -1,170 +1,172 @@
 <?php
-
 namespace Config;
-
 use CodeIgniter\Config\BaseConfig;
 
 class Email extends BaseConfig
 {
-    /**
-     * @var string
-     */
-    public $fromEmail;
 
-    /**
-     * @var string
-     */
-    public $fromName;
+	/**
+	 * @var string
+	 */
+	public $fromEmail;
 
-    /**
-     * @var string
-     */
-    public $recipients;
+	/**
+	 * @var string
+	 */
+	public $fromName;
 
-    /**
-     * The "user agent"
-     *
-     * @var string
-     */
-    public $userAgent = 'CodeIgniter';
+	/**
+	 * @var string
+	 */
+	public $recipients;
 
-    /**
-     * The mail sending protocol: mail, sendmail, smtp
-     *
-     * @var string
-     */
-    public $protocol = 'mail';
+	/**
+	 * The "user agent"
+	 *
+	 * @var string
+	 */
+	public $userAgent = 'Lokania';
 
-    /**
-     * The server path to Sendmail.
-     *
-     * @var string
-     */
-    public $mailPath = '/usr/sbin/sendmail';
+	/**
+	 * The mail sending protocol: mail, sendmail, smtp
+	 *
+	 * @var string
+	 */
+	public $protocol = 'smtp';
 
-    /**
-     * SMTP Server Address
-     *
-     * @var string
-     */
-    public $SMTPHost;
+	/**
+	 * The server path to Sendmail.
+	 *
+	 * @var string
+	 */
+	public $mailPath = '/usr/sbin/sendmail';
 
-    /**
-     * SMTP Username
-     *
-     * @var string
-     */
-    public $SMTPUser;
+	/**
+	 * SMTP Server Address
+	 *
+	 * @var string
+	 */
+	public $SMTPHost = 'smtp.gmail.com';
 
-    /**
-     * SMTP Password
-     *
-     * @var string
-     */
-    public $SMTPPass;
+	/**
+	 * SMTP Username
+	 *
+	 * @var string
+	 */
+	// Enter your email id from where you send email
+	public $SMTPUser = 'bpypgh@gmail.com';
+	
 
-    /**
-     * SMTP Port
-     *
-     * @var int
-     */
-    public $SMTPPort = 25;
+	/**
+	 * SMTP Password
+	 *
+	 * @var string
+	 */
+	// Enter your email's password
+	public $SMTPPass = 'just1995';
 
-    /**
-     * SMTP Timeout (in seconds)
-     *
-     * @var int
-     */
-    public $SMTPTimeout = 5;
+	/**
+	 * SMTP Port
+	 *
+	 * @var integer
+	 */
+	public $SMTPPort = 465;
 
-    /**
-     * Enable persistent SMTP connections
-     *
-     * @var bool
-     */
-    public $SMTPKeepAlive = false;
+	/**
+	 * SMTP Timeout (in seconds)
+	 *
+	 * @var integer
+	 */
+	public $SMTPTimeout = 60;
 
-    /**
-     * SMTP Encryption. Either tls or ssl
-     *
-     * @var string
-     */
-    public $SMTPCrypto = 'tls';
+	/**
+	 * Enable persistent SMTP connections
+	 *
+	 * @var boolean
+	 */
+	public $SMTPKeepAlive = false;
 
-    /**
-     * Enable word-wrap
-     *
-     * @var bool
-     */
-    public $wordWrap = true;
+	/**
+	 * SMTP Encryption. Either tls or ssl
+	 *
+	 * @var string
+	 */
+	public $SMTPCrypto = 'ssl';
 
-    /**
-     * Character count to wrap at
-     *
-     * @var int
-     */
-    public $wrapChars = 76;
+	/**
+	 * Enable word-wrap
+	 *
+	 * @var boolean
+	 */
+	public $wordWrap = true;
 
-    /**
-     * Type of mail, either 'text' or 'html'
-     *
-     * @var string
-     */
-    public $mailType = 'text';
+	/**
+	 * Character count to wrap at
+	 *
+	 * @var integer
+	 */
+	public $wrapChars = 76;
 
-    /**
-     * Character set (utf-8, iso-8859-1, etc.)
-     *
-     * @var string
-     */
-    public $charset = 'UTF-8';
+	/**
+	 * Type of mail, either 'text' or 'html'
+	 *
+	 * @var string
+	 */
+	public $mailType = 'html';
 
-    /**
-     * Whether to validate the email address
-     *
-     * @var bool
-     */
-    public $validate = false;
+	/**
+	 * Character set (utf-8, iso-8859-1, etc.)
+	 *
+	 * @var string
+	 */
+	public $charset = 'UTF-8';
 
-    /**
-     * Email Priority. 1 = highest. 5 = lowest. 3 = normal
-     *
-     * @var int
-     */
-    public $priority = 3;
+	/**
+	 * Whether to validate the email address
+	 *
+	 * @var boolean
+	 */
+	public $validate = false;
 
-    /**
-     * Newline character. (Use “\r\n” to comply with RFC 822)
-     *
-     * @var string
-     */
-    public $CRLF = "\r\n";
+	/**
+	 * Email Priority. 1 = highest. 5 = lowest. 3 = normal
+	 *
+	 * @var integer
+	 */
+	public $priority = 3;
 
-    /**
-     * Newline character. (Use “\r\n” to comply with RFC 822)
-     *
-     * @var string
-     */
-    public $newline = "\r\n";
+	/**
+	 * Newline character. (Use “\r\n” to comply with RFC 822)
+	 *
+	 * @var string
+	 */
+	public $CRLF = "\r\n";
 
-    /**
-     * Enable BCC Batch Mode.
-     *
-     * @var bool
-     */
-    public $BCCBatchMode = false;
+	/**
+	 * Newline character. (Use “\r\n” to comply with RFC 822)
+	 *
+	 * @var string
+	 */
+	public $newline = "\r\n";
 
-    /**
-     * Number of emails in each BCC batch
-     *
-     * @var int
-     */
-    public $BCCBatchSize = 200;
+	/**
+	 * Enable BCC Batch Mode.
+	 *
+	 * @var boolean
+	 */
+	public $BCCBatchMode = false;
 
-    /**
-     * Enable notify message from server
-     *
-     * @var bool
-     */
-    public $DSN = false;
+	/**
+	 * Number of emails in each BCC batch
+	 *
+	 * @var integer
+	 */
+	public $BCCBatchSize = 200;
+
+	/**
+	 * Enable notify message from server
+	 *
+	 * @var boolean
+	 */
+	public $DSN = false;
 }

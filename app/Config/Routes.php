@@ -35,6 +35,8 @@ $routes->get('/', 'Home::index');
 $routes->post('checkroom', 'Home::checkroom');
 $routes->post('sessiondestroy', 'Home::sessiondestroy');
 $routes->post('guestroom', 'Home::guestroom');
+$routes->post('insertandemail', 'Home::insertandemail');
+$routes->get('reservationcomplete', 'Home::reservationcomplete');
 
 /*
  * --------------------------------------------------------------------

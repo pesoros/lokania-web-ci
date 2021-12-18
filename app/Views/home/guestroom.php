@@ -21,11 +21,11 @@
 <div class="row foo" style="margin:30px auto 30px auto;">
 <div class="large-12 columns">
 		<div class="large-3 columns centerdiv">
-			<a href="sessiondestroy.php" class="button round blackblur fontslabo" >1</a>
+			<a href="<?= base_url('sessiondestroy') ?>" class="button round blackblur fontslabo" >1</a>
 			<p class="fontgrey">Please select Date</p>
 		</div>
 		<div class="large-3 columns centerdiv">
-			<a href="unsetroomchosen.php" class="button round blackblur fontslabo" >2</a>
+			<a href="<?= base_url('unsetroomchosen') ?>" class="button round blackblur fontslabo" >2</a>
 			<p class="fontgrey">Select Room</p>
 		</div>
 		<div class="large-3 columns centerdiv">
@@ -46,7 +46,7 @@
 	
 		<div class="large-12 columns " >
 		<p><b>Your Reservation</b></p><hr class="line">
-				<form name="guestdetails" action="unsetroomchosen.php" method="post" >
+				<form name="guestdetails" action="<?= base_url('unsetroomchosen') ?>" method="post" >
 				<div class="row">
 					<div class="large-12 columns">
 						<div class="row">
@@ -182,7 +182,7 @@
 
 	<div class="large-8 columns blackblur fontcolor" style="padding-top:10px;">
 		<p><b>Guest Details</b><hr class="line"></p>
-		<form action="insertandemail.php" method="post"  onSubmit="return validateForm(this);">
+		<form action="<?= base_url('insertandemail') ?>" method="post"  onSubmit="return validateForm(this);">
 		  <div class="row">
 
 			<div class="large-6 columns">
