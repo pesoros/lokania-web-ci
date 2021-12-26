@@ -72,6 +72,13 @@ textarea { height: auto; min-height: 50px; }
 /* line 461, foundation/components/_global.scss */
 select { width: 100%; }
 
+.row-body {
+    width: 80%;
+    max-width: 1920px;
+    max-height: 1080px;
+    height: 80%;
+    margin:auto;
+}
 /* line 218, foundation/components/_grid.scss */
 .row { width: 100%; margin-left: auto; margin-right: auto; margin-top: 0; margin-bottom: 0; max-width: 62.5rem; }
 /* line 172, foundation/components/_global.scss */
@@ -2592,7 +2599,7 @@ p aside { font-size: 0.875rem; line-height: 1.35; font-style: italic; }
 
 /* Default header styles */
 /* line 252, foundation/components/_type.scss */
-h1, h2, h3, h4, h5, h6 { font-family: "Metrophobic", Arial, sans-serif; font-weight: normal; font-style: normal; color: #222222; text-rendering: optimizeLegibility; margin-top: 0.2rem; margin-bottom: 0.5rem; line-height: 1.4; }
+h1, h2, h3, h4, h5, h6 { font-family: "Metrophobic", Arial, sans-serif; font-weight: normal; font-style: normal; color: #222222; text-rendering: optimizeLegibility; line-height: 1.4; }
 /* line 262, foundation/components/_type.scss */
 h1 small, h2 small, h3 small, h4 small, h5 small, h6 small { font-size: 60%; color: #6f6f6f; line-height: 0; }
 

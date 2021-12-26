@@ -5,175 +5,197 @@ session_start();
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Reservation</title>
-<meta name="reservation hotel for malaysia" >
-<meta name="zulkarnain" content="gambohnetwork.com.my">
-<meta name="copyright" content="Hotel Malaysia, inc. Copyright (c) 2014">
-<link rel="stylesheet" href="scss/normalize.css">
-<link rel="stylesheet" href="scss/foundation.css">
+
+<!-- CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+<!-- Local -->
 <link rel="stylesheet" href="scss/style.css">
+<link href="scss/datepicker.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="scss/datepicker.css">
-<link href="scss/datepicker.css" rel="stylesheet" type="text/css"/>  
-<link href='http://fonts.googleapis.com/css?family=Slabo+13px' rel='stylesheet' type='text/css'>
-<!--link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/-->
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+
 
 <script>
-  $(document).ready(function() {
+	$(document).ready(function () {
 		$("#checkout").datepicker();
 		$("#checkin").datepicker({
-		minDate : new Date(),
-		onSelect: function (dateText, inst) {
-        var date = $.datepicker.parseDate($.datepicker._defaults.dateFormat, dateText);
-        $("#checkout").datepicker("option", "minDate", date);
-		}
+			minDate: new Date(),
+			onSelect: function (dateText, inst) {
+				var date = $.datepicker.parseDate($.datepicker._defaults.dateFormat, dateText);
+				$("#checkout").datepicker("option", "minDate", date);
+			}
 		});
-  });
+	});
 </script>
-<link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
-<meta class="foundation-data-attribute-namespace"><meta class="foundation-mq-xxlarge"><meta class="foundation-mq-xlarge"><meta class="foundation-mq-large"><meta class="foundation-mq-medium"><meta class="foundation-mq-small"><style></style><meta class="foundation-mq-topbar"></head>
-<body class="fontbody" style="background-image : url(img/background.jpg); no-repeat center center fixed; background-size: cover;">
- 
-<div class="row foo" style="margin:30px auto 30px auto;"><br><br>
-<!--div class="large-12 columns">
-		<div class="large-3 columns centerdiv">
-			<a href="index.php" class="button round fontslabo" style="background-color:#2ecc71;">1</a>
-			<p class="fontgrey">Please select Date</p>
-		</div>
-		<div class="large-3 columns centerdiv">
-			<a href="#" class="button round blackblur fontslabo" >2</a>
-			<p class="fontgrey">Select Room</p>
-		</div>
-		<div class="large-3 columns centerdiv">
-			<a href="#" class="button round blackblur fontslabo">3</a>
-			<p class="fontgrey">Guest Details</p>
-		</div>
-		<div class="large-3 columns centerdiv">
-			<a href="#" class="button round blackblur fontslabo">4</a>
-			<p class="fontgrey">Reservation Complete</p>
-		</div>
-</div-->
 
-</div>
-</div>
- 
-<div class="row">
-	<div class="large-4 columns blackblur fontcolor" style="padding-top:10px;">
-	
-	<div class="large-12 columns " >
-	<p><b>Check Date</b></p><hr class="line">
-			<form name="form" action="<?= base_url('checkroom') ?>" method="post" onSubmit="return validateForm(this);">
-			<div class="row">
-				
-					<div class="large-6 columns" style="max-width:100%;">
-						<label class="fontcolor" for="checkin">Check In
-							<input name="checkin" id="checkin" style="width:100%;"/>
-						</label>
-					</div>
-					
-					<div class="large-6 columns" style="max-width:100%;">
-						<label class="fontcolor" for="checkout">Check Out
-							<input name="checkout" id="checkout" style="width:100%;"/>
-						</label>
-					
-					
-					</div>
-			</div>
-					
-			<div class="row">
-				
-					<div class="large-6 columns">
-						<label class="fontcolor">Adults
-							
-								<select  name="totaladults" id="totaladults" style="width:100%;">
-								<option value="0">0</option>
-								<option value="1">1</option>
-								<option value="2">2</option>
-								<option value="3">3</option>
-								<option value="4">4</option>
-								<option value="5">5</option>
-								<option value="6">6</option>
-								<option value="7">7</option>
-								<option value="8">8</option>
-								<option value="9">9</option>
-								<option value="10">10</option>
-								</select>
-							
-						</label>
-					</div>
-					
-					<div class="large-6 columns"  style="max-width:100%;">
-						<label class="fontcolor">Children
-							<select  name="totalchildrens" id="totalchildrens" style="width:100%; color:black;">
-							<option value="0">0</option>
-							<option value="1">1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
-							<option value="4">4</option>
-							<option value="5">5</option>
-							<option value="6">6</option>
-							<option value="7">7</option>
-							<option value="8">8</option>
-							<option value="9">9</option>
-							<option value="10">10</option>
-							</select>
-						</label>
-					</div>
-					
-				
-			</div>
-			
-			  <div class="row">
-				<div class="large-12 columns" >
-					<button name="submit" href="#" class="button small fontslabo" style="background-color:#2ecc71; width:100%;" >Check Availability</button>
-				</div>
-			  </div>
-			</form>
-	</div>
-	
-
-
-</div>
-</div>
-<script>
-	function validateForm(form) {
-		var a = form.checkin.value;
-		var b = form.checkout.value;
-		var c = form.totaladults.value;
-		var d = form.totalchildrens.value;
-			if(a == null || b == null || a == "" || b == "") 
-			{
-			 alert("Please choose date");
-			 return false;
-			}
-			if(c == 0) 
-			{
-			 	if(d == 0) 
-				{
-				 alert("Please choose no. of guest");
-				 return false;
-				}
-			}
-			if(d == 0) 
-			{
-			 	if(c == 0) 
-				{
-				 alert("Please choose no. of guest");
-				 return false;
-				}
-			}
-
+<style>
+	.header {
+		position: relative;
+		text-align: center;
+		color: white;
 	}
-</script>
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	.logo {
+		width: 50px;
+		fill: white;
+		padding-right: 15px;
+		display: inline-block;
+		vertical-align: middle;
+	}
 
-  ga('create', 'UA-57205452-1', 'auto');
-  ga('send', 'pageview');
+	.inner-header {
+		height: 65vh;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+		max-width: 360px;
+		padding: 0px 10px;
+	}
 
-</script>
-</body></html>
+	.flex {
+		/*Flexbox for containers*/
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+	}
+
+</style>
+
+</head>
+
+<body style="background-color: var(--yellow);">
+
+	<!-- <header class="header">
+
+		<nav class="nav">
+			<div class="logo">LOKANIA.</div>
+			<ul>
+				<li><a href="">Masuk</a></li>
+				<li><a href="">Daftar</a></li>
+			</ul>
+		</nav>
+
+	</header> -->
+
+	<div class="header">
+
+		<!--Content before waves-->
+		<div class="inner-header flex">
+
+
+
+			<form name="form" action="<?= base_url('checkroom') ?>" method="post" onSubmit="return validateForm(this);">
+
+				<div class="row">
+					<img src="<?= base_url('/img/logo-lokania.png') ?>" alt="" style="width:250px;">
+					<p style="margin-top: -35px;margin-bottom: 70px;">#CariKamardiLokaniaAja</p>
+				</div>
+
+				<!-- <div class="row">
+					<p class="form-title" style="color: white;">Cari Hotel?</p>
+					<br>
+				</div> -->
+
+				<div class="row">
+
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						<div class="row">
+							<div class="col-md-12 col-sm-12 col-xs-12">
+								<p style="text-align: left;margin-left: 4px;margin-bottom: 5px;">Di mana Anda akan menginap?</p>
+								<input name="location" id="location" class="input-box" placeholder="Pilih Kota" />
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-6 col-sm-6 col-xs-6">
+								<input name="checkin" id="checkin" class="input-box" placeholder="Check In" />
+							</div>
+							<div class="col-md-6 col-sm-6 col-xs-6">
+								<input name="checkout" id="checkout" class="input-box" placeholder="Check Out" />
+							</div>
+						</div>
+
+						<div class="row">
+
+							<div class="col-md-2 col-sm-2 col-xs-2">
+								<i class="fas fa-user-alt" style="font-size: 25px;margin-top: 7px;margin-left: 15px;"></i>
+							</div>
+
+							<div class="col-md-5 col-sm-5 col-xs-5">
+								<select name="totaladults" id="totaladults" class="input-box">
+									<option value="1">1 Dewasa</option>
+									<option value="2">2 Dewasa</option>
+									<option value="3">3 Dewasa</option>
+									<option value="4">4 Dewasa</option>
+									<option value="5">5 Dewasa</option>
+								</select>
+							</div>
+
+							<div class="col-md-5 col-sm-5 col-xs-5">
+								<select name="totalchildrens" id="totalchildrens" class="input-box">
+									<option value="0">0 Anak</option>
+									<option value="1">1 Anak</option>
+									<option value="2">2 Anak</option>
+									<option value="3">3 Anak</option>
+									<option value="4">4 Anak</option>
+									<option value="5">5 Anak</option>
+								</select>
+							</div>
+							
+						</div>
+
+						<div class="row">
+							<div class="col-md-12">
+								<button name="submit" href="" class="input-box" style="background-color:var(--blue);">
+									<i class="fas fa-search" style="color: white;"></i>
+								</button>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<footer>
+		<p style="margin-top: -30px; font-size: 15px;"><a href="">Daftar</a><span> / </span><a href="">Masuk</a></p>
+		<p>2022 © Lokania | Info: 085158307774</p>
+	</footer>
+
+	<script>
+		function validateForm(form) {
+			var a = form.checkin.value;
+			var b = form.checkout.value;
+			var c = form.totaladults.value;
+			var d = form.totalchildrens.value;
+			var e = form.location.value;
+
+			if (e == "") {
+				alert("Pilih Kota");
+				return false;
+			}
+			if (a == null || b == null || a == "" || b == "") {
+				alert("Pilih Tanggal");
+				return false;
+			}
+			if (c == "") {
+				if (d == "") {
+					alert("Minimal 1 Dewasa");
+					return false;
+				}
+			}
+		}
+	</script>
+</body>
+
+</html>
