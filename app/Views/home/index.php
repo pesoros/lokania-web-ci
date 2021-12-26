@@ -8,6 +8,7 @@ session_start();
 
 <!-- CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
 
 <!-- JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
@@ -19,14 +20,12 @@ session_start();
 
 <!-- Local -->
 <link rel="stylesheet" href="scss/style.css">
-<link href="scss/datepicker.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" href="scss/datepicker.css">
-
 
 <script>
 	$(document).ready(function () {
 		$("#checkout").datepicker();
-		$("#checkin").datepicker({
+		$("#checkin").datepicker(
+			{
 			minDate: new Date(),
 			onSelect: function (dateText, inst) {
 				var date = $.datepicker.parseDate($.datepicker._defaults.dateFormat, dateText);
@@ -150,7 +149,7 @@ session_start();
 									<option value="5">5 Anak</option>
 								</select>
 							</div>
-							
+
 						</div>
 
 						<div class="row">
